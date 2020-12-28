@@ -20,8 +20,7 @@
     "sourceType": "module"
   },
   "plugins": [
-    "@typescript-eslint",
-    "prettier"
+    "@typescript-eslint"
   ],
   "rules": {
     "no-console": "off",
@@ -37,8 +36,7 @@
       {
         "ts": "never"
       }
-    ],
-    "prettier/prettier": "error"
+    ]
   },
   "settings": {
     "import/resolver": {
