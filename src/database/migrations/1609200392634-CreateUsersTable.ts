@@ -17,7 +17,6 @@ export default class CreateUsersTable1609200392634 implements MigrationInterface
           name: 'nickname',
           type: 'varchar',
           isNullable: false,
-          isUnique: true,
         },
         {
           name: 'email',
