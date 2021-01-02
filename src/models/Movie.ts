@@ -16,9 +16,6 @@ class Movie {
   @Column('smallint')
   total_qnt: number;
 
-  @Column('smallint')
-  available_qnt: number;
-
   @CreateDateColumn()
   created_at: Date;
 
