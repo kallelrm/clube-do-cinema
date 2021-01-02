@@ -38,6 +38,9 @@ class RentsRepository extends Repository<Rent> {
     if (!rent) {
       throw new AppError('Rent does not exist');
     }
+    if (rent.devolution) {
+      throw new AppError('Cannot return already returned movie');
+    }
 
     await this.update(rent_id, { devolution: !is_rent });
 
