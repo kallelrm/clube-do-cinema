@@ -20,8 +20,8 @@ class Rent {
   @Column()
   movie_id: string;
 
-  @OneToOne(() => User)
-  @JoinColumn({ name: 'user_id' })
+  @OneToOne(() => Movie)
+  @JoinColumn({ name: 'movie_id' })
   movie: Movie;
 
   @CreateDateColumn()

@@ -21,8 +21,6 @@ moviesRouter.get('/', ensureAuthenticated, async (request, response) => {
 moviesRouter.get('/findByName', ensureAuthenticated, async (request, response) => {
   const { name } = request.query;
 
-  console.log(name);
-
   const moviesRepository = getCustomRepository(MoviesRepository);
   const movie = await moviesRepository.findByName(`${name}`);
 
