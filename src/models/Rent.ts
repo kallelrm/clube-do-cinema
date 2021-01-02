@@ -5,7 +5,7 @@ import {
 import User from './User';
 import Movie from './Movie';
 
-@Entity('rents')
+@Entity('rent')
 class Rent {
   @PrimaryGeneratedColumn('uuid')
   id: string;
@@ -23,6 +23,9 @@ class Rent {
   @OneToOne(() => Movie)
   @JoinColumn({ name: 'movie_id' })
   movie: Movie;
+
+  @Column()
+  devolution: boolean;
 
   @CreateDateColumn()
   created_at: Date;

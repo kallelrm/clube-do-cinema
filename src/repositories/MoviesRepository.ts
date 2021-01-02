@@ -1,6 +1,7 @@
 import {
   EntityRepository, Repository, MoreThan,
 } from 'typeorm';
+import AppError from '../errors/AppError';
 
 import Movie from '../models/Movie';
 
@@ -31,6 +32,28 @@ class MoviesRepository extends Repository<Movie> {
     });
 
     return movie || null;
+  }
+
+  public async updateTotalQnt(id: string, is_rent: boolean): Promise<Movie> {
+    const movie = await this.findOne({
+      where: {
+        id,
+      },
+    });
+
+    if (!movie) {
+      throw new AppError('Movie does not exist', 402);
+    }
+
+    if (is_rent) {
+      movie.total_qnt -= 1;
+    } else {
+      movie.total_qnt += 1;
+    }
+
+    await this.update(id, { total_qnt: movie.total_qnt });
+
+    return movie;
   }
 }
 
