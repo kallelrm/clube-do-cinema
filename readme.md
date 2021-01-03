@@ -8,7 +8,7 @@ Ao rodar, eventualmente será "promptado" o pedido de uma senha, insira 'databas
 
 ## Usuários
 
-[Post] /users
+### [Post] /users
   
   Corpo da requisição:
   ```json
@@ -19,7 +19,7 @@ Ao rodar, eventualmente será "promptado" o pedido de uma senha, insira 'databas
 
 ## Autenticação
 
-[POST] /sessions
+### [POST] /sessions
   
   Corpo da requisição:
   ```json
@@ -31,13 +31,13 @@ Ao rodar, eventualmente será "promptado" o pedido de uma senha, insira 'databas
   
 ## Filmes
 
-[GET] /movies
+### [GET] /movies
 
   Sem parâmetros, necessita autenticação via bearer token
   
   Retorna os dados dos filmes disponíveis, junto com seu id, o qual é usado quando é feita uma locação (ver adiante)
   
-[GET] /movies/findByName?name=string
+### [GET] /movies/findByName?name=string
 
   Necessita autenticação via bearer token
   
@@ -47,13 +47,13 @@ Ao rodar, eventualmente será "promptado" o pedido de uma senha, insira 'databas
   
 ## Locações
 
-[GET] /rents
+### [GET] /rents
   
   Necessita autenticação via beater token
   
   Sem parâmetros, retorna as locações relativas ao usuário logado na sessão
 
-[POST] /rents
+### [POST] /rents
 
   Necessita autenticação via bearer token
   
@@ -64,7 +64,7 @@ Ao rodar, eventualmente será "promptado" o pedido de uma senha, insira 'databas
   
   Retorna os dados relativos a nova locação por parte do usuário logado. 
   
-[PUT] /rents/devolution
+### [PUT] /rents/devolution
   Necessita autenticação via bearer token
   Corpo da requisição:
   ```json
